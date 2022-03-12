@@ -4,11 +4,9 @@ package midtermreviewcodeforpartc;
 
 public class PasswordValidator {
   
-    public static void validPassword(String password){
-        boolean validPassword=false;
-        while(!validPassword)
-        {
-                                  
+    public static boolean validPassword(String password){
+       
+                                
             int specialCharCount=0;
             
             for(int i=0;i<password.length(); i++)
@@ -21,11 +19,11 @@ public class PasswordValidator {
             }
             if(specialCharCount>0 &&password.length()>7)
             {
-                validPassword=true;
-            }else
-                break;
+                return true;
+            }else 
+                return false;
             
-        }
+        
         
     }
     

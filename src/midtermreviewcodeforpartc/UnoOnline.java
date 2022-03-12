@@ -45,14 +45,17 @@ public class UnoOnline
         boolean validPassword = false;
         String password = "";
 
-        System.out.println("Passwords must have at least 8 characters");
-        System.out.println("Passwords must have at least one special character");
-        System.out.println("Please enter your desired password:");
-
-        password = sc.nextLine();
         int specialCharCount = 0;
 
-        PasswordValidator.validPassword(password);
+        while (!validPassword) {
+            
+            System.out.println("Passwords must have at least 8 characters");
+            System.out.println("Passwords must have at least one special character");
+            System.out.println("Please enter your desired password:");
+            password = sc.nextLine();
+            validPassword = PasswordValidator.validPassword(password);
+
+        }
 
         User newUser = new User(userName, password);
         users[userCount] = newUser;//add the new user to the user list
